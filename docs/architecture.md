@@ -57,11 +57,13 @@ VisionPark/
 │   │   │   ├── reports/
 │   │   │   └── audit_logs/
 │   │   │
-│   │   ├── alpr/                         # Parent AI/OCR
-│   │   │   ├── detector/
-│   │   │   ├── recognition/
-│   │   │   ├── normalization/
-│   │   │   └── runtime/
+│   │   ├── alpr/                         # Parent AI/OCR (ONNX Runtime)
+│   │   │   ├── weights/                  # Chứa file YOLO/OCR .onnx (Được gitignore)
+│   │   │   ├── schema.py                 # Định nghĩa ALPRResult, BoundingBox
+│   │   │   ├── interface.py              # Interface chuẩn giao tiếp ALPRRuntime
+│   │   │   ├── onnx_provider.py          # Implement ALPRRuntime bằng onnxruntime
+│   │   │   ├── utils.py                  # Các hàm OpenCV tiền xử lý và crop
+│   │   │   └── errors.py                 # Custom exception cho AI
 │   │   │
 │   │   ├── integrations/                 # Parent tích hợp bên ngoài
 │   │   │   ├── cameras/
