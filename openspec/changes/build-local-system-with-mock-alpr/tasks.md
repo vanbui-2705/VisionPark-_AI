@@ -30,21 +30,21 @@
 
 ## 3. Người 2 — Backend Core, PostgreSQL và Auth
 
-- [ ] 3.1 Khởi tạo `pyproject.toml`, FastAPI app, API v1 router registry và backend test configuration
-- [ ] 3.2 Tạo settings loader, CORS, environment validation và cấu hình upload/storage/JWT
-- [ ] 3.3 Tạo SQLAlchemy engine/session, declarative base và request-scoped database dependency
-- [ ] 3.4 Cấu hình Alembic và kiểm tra upgrade/downgrade trên database rỗng
-- [ ] 3.5 Tạo shared timestamp/UUID conventions và import registry cho migration
-- [ ] 3.6 Tạo Role/User ORM models cùng migration, unique constraint và active status
-- [ ] 3.7 Tạo seed idempotent cho `ADMIN`, `OPERATOR`, tài khoản demo và gọi seed trong local bootstrap
-- [ ] 3.8 Implement Argon2id password hashing, JWT creation/validation và không log credential/token
-- [ ] 3.9 Implement `POST /api/v1/auth/login` cho success, wrong password và inactive user
-- [ ] 3.10 Implement `GET /api/v1/auth/me` và current-user dependency
-- [ ] 3.11 Implement role checker dùng chung để Người 1 bảo vệ ALPR Detection API và Người 3 bảo vệ Lane/history/confirmation API
-- [ ] 3.12 Implement correlation-ID middleware và error response `{code,message,details,correlation_id}`
-- [ ] 3.13 Implement `/health/live` và `/health/ready`, nhận DB status và ALPR readiness từ interface Người 1
-- [ ] 3.14 Viết test migration, seed lặp, login đúng/sai/inactive, token lỗi, current user và RBAC helper
-- [ ] 3.15 Bàn giao DB/auth dependencies và router registration convention cho Người 1/3
+- [x] 3.1 Khởi tạo `pyproject.toml`, FastAPI app, API v1 router registry và backend test configuration
+- [x] 3.2 Tạo settings loader, CORS, environment validation và cấu hình upload/storage/JWT
+- [x] 3.3 Tạo SQLAlchemy engine/session, declarative base và request-scoped database dependency
+- [x] 3.4 Cấu hình Alembic và kiểm tra upgrade/downgrade trên database rỗng
+- [x] 3.5 Tạo shared timestamp/UUID conventions và import registry cho migration
+- [x] 3.6 Tạo Role/User ORM models cùng migration, unique constraint và active status
+- [x] 3.7 Tạo seed idempotent cho `ADMIN`, `OPERATOR`, tài khoản demo và gọi seed trong local bootstrap
+- [x] 3.8 Implement Argon2id password hashing, JWT creation/validation và không log credential/token
+- [x] 3.9 Implement `POST /api/v1/auth/login` cho success, wrong password và inactive user
+- [x] 3.10 Implement `GET /api/v1/auth/me` và current-user dependency
+- [x] 3.11 Implement role checker dùng chung để Người 1 bảo vệ ALPR Detection API và Người 3 bảo vệ Lane/history/confirmation API
+- [x] 3.12 Implement correlation-ID middleware và error response `{code,message,details,correlation_id}`
+- [x] 3.13 Implement `/health/live` và `/health/ready`, nhận DB status và ALPR readiness từ interface Người 1
+- [x] 3.14 Viết test migration, seed lặp, login đúng/sai/inactive, token lỗi, current user và RBAC helper
+- [x] 3.15 Bàn giao DB/auth dependencies và router registration convention cho Người 1/3
 
 ## 4. Người 3 — Backend Lane, Persistence, Storage và Confirmation
 

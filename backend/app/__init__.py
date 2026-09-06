@@ -1,0 +1,1 @@
+"""VisionPark backend application package."""
