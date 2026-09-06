@@ -103,18 +103,18 @@ Dieu phoi Phase 1, cung cap ALPR baseline, xay dung moi truong chung va dam bao 
 
 | ID | Cong viec | Dau ra | Tieu chi hoan thanh |
 | --- | --- | --- | --- |
-| `P1-AI-01` | Chuan bi video fixture | 3-5 video MP4 dai dien | Co video ro, toi va goc lech; duoc phep su dung |
-| `P1-AI-02` | Doc video bang OpenCV | Video reader | Doc duoc frame; EOF/file loi khong lam crash |
-| `P1-AI-03` | Lay mau frame | Frame sampler | Tan suat xu ly cau hinh duoc |
-| `P1-AI-04` | Tich hop plate detector pretrained | Detector adapter | Tra bbox va detector confidence |
-| `P1-AI-05` | Crop va tien xu ly | Plate cropper | Clamp bbox; khong crop vuot bien anh |
-| `P1-AI-06` | Tich hop PaddleOCR pretrained | Recognition adapter | Tra chuoi OCR va recognition confidence |
-| `P1-AI-07` | Chuan hoa bien so | Normalizer | Viet hoa; bo khoang trang, dau cham va gach |
-| `P1-AI-08` | Tong hop confidence | Confidence policy | Ket qua thap dat `requires_confirmation=true` |
-| `P1-AI-09` | Dong goi runtime interface | `detect_and_read(frame)` | Backend goi ma khong phu thuoc chi tiet model |
-| `P1-AI-10` | Tao model manifest | Manifest version model | Co ten, version, source va checksum/path |
-| `P1-AI-11` | Benchmark baseline | Bao cao Markdown/CSV | Co latency, exact match, nhom loi va phan cung test |
-| `P1-AI-12` | Lap ke hoach dataset Phase 2 | Dataset backlog | Neu ro can label bbox hay OCR text va vi sao |
+| `P1-AI-01` | Chot `ALPRResult` schema | Contract noi bo AI | Co day du plate, bbox, confidence |
+| `P1-AI-02` | Chot bbox convention | `[x1,y1,x2,y2]` | Thong nhat pixel coordinate |
+| `P1-AI-03` | Tao runtime interface | `detect_and_read(frame)` | Backend goi ma khong phu thuoc chi tiet model |
+| `P1-AI-04` | Tao ONNX ALPR provider | ONNX runtime | Load file `.onnx` tu Colab, xu ly OpenCV |
+| `P1-AI-05` | Crop va tien xu ly | Plate cropper | Resize hinh anh va cat theo bbox cho OCR |
+| `P1-AI-06` | Chuan hoa bien so | Normalizer | Viet hoa; bo khoang trang, dau cham va gach |
+| `P1-AI-07` | Tong hop confidence | Confidence policy | `< 0.85` dat `requires_confirmation=true` |
+| `P1-AI-08` | Tao schema HTTP ALPR | Request/response models | OpenAPI the hien dung multipart, result va error |
+| `P1-AI-09` | Nhan va kiem tra frame | Multipart parser | Chi nhan JPEG/PNG hop le, gioi han size |
+| `P1-AI-10` | Tao ALPR application service | Luong dieu phoi detection | Kiem tra lane, goi ONNX runtime, luu anh/ket qua |
+| `P1-AI-11` | Tao Detection API | `POST /alpr/detections` | Goi luong xu ly thuc te; handle validation/ONNX errors |
+| `P1-AI-12` | Viet test ALPR API | Contract/integration tests | Bao phu API endpoint va validation |
 
 AI Definition of Done:
 
