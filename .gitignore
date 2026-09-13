@@ -1,4 +1,11 @@
 *.onnx
 __pycache__/
 *.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+backend/var/
+*.egg-info/
 .env
